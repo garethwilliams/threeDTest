@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Charcoal Blue - Test</title>
+    <meta name="description" content="Hello, World! - A-Frame">
+    <link href="assets/css/styles.css"  rel="stylesheet">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </head>
+  <body>
+
+
+<div id="container">
+  <div class="column left">
+
+    <a-scene embedded>
+
+  <a-assets>
+    <a-asset-item id="andy" src="/assets/Andy.gltf"></a-asset-item>
+
+    <a-asset-item id="room" src="/assets/room.gltf"></a-asset-item>
+    
+  </a-assets>
+<!-- 
+  <a-sphere position="2.5 3 -4" radius="1" color="#EF2D5E"></a-sphere> -->
+
+  <a-entity position="0 1.6 2" rotation="0 0 0" id="first-camera">
+  <a-camera active="true" look-controls-enabled="true" wasd-controls-enabled="true"></a-camera>
+  </a-entity>
+
+<!--   <a-entity position="0 1.6 4" id="second-camera"> 
+  <a-camera active="true" look-controls-enabled="true" wasd-controls-enabled="true" id="camTwo"></a-camera>
+  </a-entity> -->
+
+  <a-entity light="type:directional; castShadow:true; intensity:1.3;" position="1 1 3.4"></a-entity>
+  <a-entity light="type:directional; castShadow:true;  intensity:0.6;" position="-3 8 -2.6"></a-entity>
+  <a-entity position="0 0 -1" scale="8 8 8" id="android" gltf-model="#andy" rotation="0 0 0" shadow="receive: false"></a-entity>
+
+    <a-entity position="0 10 0" scale="2 2 2" id="room" gltf-model="#room" rotation="0 145 0" shadow="receive: true"></a-entity>
+
+<!--    <a-plane position="0 0 -3" rotation="-90 0 0" width="8" height="8" color="#7BC8A4" shadow="receive: true"></a-plane> -->
+
+
+    </a-scene>
+
+  </div>
+  <div class="column right">
+    <H1>Room Layout</H1>
+    <p>irn gjrng jkerng jker ngjer ngjer ng erngjk erjg enrjgn erj gerngerjng erg ejrk gnerng erjn gnjer gnergj erngjern ejrn gjer ng</p>
+    <span class="btn" id="btn-cameraOne">Camera 1</span>
+    <span class="btn" id="btn-cameraTwo">Camera 2</span>
+    <span class="btn" id="btn-turnAndry">Rotate andy</span>
+  </div>
+  
+</div>
+
+  </body>
+</html>
