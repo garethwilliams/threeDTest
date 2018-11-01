@@ -45,7 +45,7 @@ html, body, footer {
   }
 
   .btn:hover {
-    background:white;
-    color:black;
+    background:#979797 !important;
+    color:white;
     cursor: pointer;
   }

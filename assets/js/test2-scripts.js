@@ -11,6 +11,11 @@ document.getElementById("btn-cameraTwo").onclick = function() {
 	switchCameraTwo()
 };
 
+document.getElementById("hotspotOne").onclick = function() {
+	hotspotOne()
+};
+
+
 	function turnAround() {
 
 		var number = Math.floor(Math.random() * 120) + 20;
@@ -25,22 +30,29 @@ document.getElementById("btn-cameraTwo").onclick = function() {
 	}
 
 	function switchCameraOne() {
-//		document.getElementById('camOne').setAttribute('active', true)
-
 		document.querySelector("#first-camera").object3D.position.set(0, 1.6, 2);
 		document.querySelector("#first-camera").object3D.rotation.set(0, 0, 0);
 
 	};
 
 	function switchCameraTwo() {
-//		document.getElementById('CamTwo').setAttribute('camera', 'active', true)
-
 		document.querySelector("#first-camera").object3D.position.set(7, 1.6, 0);
 		document.querySelector("#first-camera").object3D.rotation.set(0, 20, 0);
 	};
 
 
+	function hotspotOne() {
+		console.log('gotit');
 
+		var number = Math.floor(Math.random() * 120) + 20;
+		console.log(number);
+
+		document.getElementById('android').object3D.rotation.set(
+	  		THREE.Math.degToRad(0),
+	  		THREE.Math.degToRad(number),
+	  		THREE.Math.degToRad(0)
+		);
+	};
 
 
 }

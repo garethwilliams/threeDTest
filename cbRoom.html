@@ -5,25 +5,25 @@
     <title>Charcoal Blue - Test</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <link href="assets/css/styles.css"  rel="stylesheet">
-    <!-- <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script> -->
-    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <!-- <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/cbRoom-scripts.js"></script>
   </head>
   <body>
 
 
 <div id="container">
   <div class="column left">
-    <a-scene embedded>
+    <a-scene embedded cursor="rayOrigin: mouse">
 
-  <a-entity oculus-go-controls></a-entity>
+<!-- <a-entity oculus-go-controls></a-entity> -->
 
 
 <!-- Loading 3D assets -->
   <a-assets>
-    <a-asset-item id="andy" src="assets/Andy.gltf"></a-asset-item>
+    <a-asset-item id="andy" src="assets/models/Andy.gltf"></a-asset-item>
     <a-asset-item id="room" src="assets/models/cbRoom.gltf"></a-asset-item>
     <a-asset-item id="mon" src="assets/models/monitor.gltf"></a-asset-item>
   </a-assets>
@@ -31,11 +31,10 @@
 
 <!-- The camera view -->
   <a-entity position="-2.5 1.2 -2.4" rotation="0 280 0" id="first-camera">
-  <a-camera active="true" fov="100" look-controls-enabled="true" wasd-controls-enabled="true">
-    <a-cursor></a-cursor>
-
-  </a-camera>
+    <a-camera active="true" fov="100" look-controls-enabled="true" wasd-controls-enabled="true">
+    </a-camera>
   </a-entity>
+
 
 <!-- Lights -->
 
@@ -44,25 +43,25 @@
   <a-entity light="type:directional; castShadow:true; intensity:0.1;" position="-3 5 -2.6"></a-entity>
 
 
-  <a-circle color="#5699FF" rotation="0 -20 0" position="1.3 2 -8" scale="0.02 0.02 0.02" radius="20"
+<!-- Hotspot with hover and click states -->
+  <a-circle color="#5699FF" rotation="0 -20 0" id="hotspotOne" position="1.3 2 -8" scale="0.02 0.02 0.02" radius="20"
   event-set__enter="_event: mouseenter; color: #8FF7FF"
   event-set__leave="_event: mouseleave; color: #4CC3D9"
   event-set__down="_event: mousedown; color: #EF6A6E"></a-circle>
 
 
-<!-- Person 3D model -->
+<!-- Robot 3D models -->
   <a-entity position="-0.5 0 -5" scale="8 8 8" id="android" gltf-model="#andy" rotation="0 0 0" shadow="receive: false"></a-entity>
 
   <a-entity position="1.9 0 -0.7" scale="8 8 8" id="android" gltf-model="#andy" rotation="0 0 0" shadow="receive: false"></a-entity>
 
   
-
+<!-- Monitor 3D model -->
   <a-entity position="1.3 1.72 -3.4" scale="0.02 0.02 0.02" id="mon" gltf-model="#mon" rotation="0 50 0" shadow="receive: false"></a-entity>
 
 
 <!-- Room 3D model -->
   <a-entity position="6 0 -5" scale="2 2 2" id="room" gltf-model="#room" rotation="0 145 0" shadow="receive: true"></a-entity>
-
 
 
     </a-scene>
