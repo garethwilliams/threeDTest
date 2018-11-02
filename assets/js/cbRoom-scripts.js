@@ -1,6 +1,5 @@
 window.onload = function(){
 
-
 // Turn Android around a random number of degrees - HTML btn to 3D scene
 document.getElementById("btn-turnAndry").onclick = function() {
 	turnAround()
@@ -8,7 +7,6 @@ document.getElementById("btn-turnAndry").onclick = function() {
 
 
 function turnAround() {
-
 		var number = Math.floor(Math.random() * 120) + 20;
 		console.log(number);
 
@@ -17,9 +15,42 @@ function turnAround() {
 	  		THREE.Math.degToRad(number),
 	  		THREE.Math.degToRad(0)
 		);
-
 	}
 
+
+
+// Bounce Android 2 using animation - HTML btn to 3D scene
+document.getElementById("btn-bounceAndry").onclick = function() {
+	bounce()
+};
+
+function bounce() {
+		document.querySelector('#androidTwo').emit('bounce');
+	}
+
+
+
+// Turn main light off - HTML btn to 3D scene
+document.getElementById("btn-lightsOff").onclick = function() {
+	lightsOff()
+};
+
+function lightsOff() {
+	console.log('lightsOFF');
+		document.querySelector('#mainLight').emit('mainLightOff');
+	}
+
+
+// Turn main light on - HTML btn to 3D scene
+document.getElementById("btn-lightsOn").onclick = function() {
+	lightsOn()
+};
+
+function lightsOn() {
+	console.log('lightsOn');
+		document.querySelector('#mainLight').emit('mainLightOn');
+	}
+	
 
 
 // switch camera views - HTML btn to 3D scene
@@ -30,7 +61,7 @@ function turnAround() {
 	
 	function switchCameraOne() {
 		document.querySelector("#first-camera").object3D.position.set(-1.1, 1.2, -0.6);
-		document.querySelector("#first-camera").object3D.rotation.set(0, 300, 0);
+		document.querySelector("#first-camera").object3D.rotation.set(0, 100, 0);
 	};
 
 
@@ -89,7 +120,6 @@ function turnAround() {
 	function hotspotHoverOut() {
 		document.getElementById("btn-turnAndry").style.backgroundColor = "#000000";
 	};
-
 }
 
 

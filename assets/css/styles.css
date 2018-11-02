@@ -16,6 +16,23 @@ html, body, footer {
   #container {
       flex-direction: row;
     }
+
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .column.left {
+      height:50vh;
+      position: fixed;
+      width:100%;
+    }
+
+    .column.right {
+      margin-top:50vh;
+      position: relative;
+      z-index: 10;
+
+    }
   }
 
 .column {
@@ -24,7 +41,7 @@ html, body, footer {
   
 .column.right {
     order: 2;
-    /*background:red;*/
+    background:white;
     padding:20px;
   }
   
